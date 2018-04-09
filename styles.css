@@ -1,0 +1,85 @@
+body {
+    
+    background-image: url("cork-texture.png");
+    background-repeat: repeat;
+    background-color: #ce9a50;
+    
+}
+
+.addNote {
+    
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.8);
+    display: inline-block;
+    
+}
+
+.addNote:hover {
+    
+    cursor: pointer;
+    color: white;
+    
+    transform: scale(1.2);
+    transition: all 0.1s ease;
+    
+}
+
+.addNote:active {
+    
+    transform: scale(1);
+    
+}
+
+.stickynote {
+    
+    background-color: #fff5a3;
+
+    min-height: 100px;
+    min-width: 150px;
+    
+    max-height: 500px;
+    max-width: 600px;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    border: 1px solid rgb(111, 111, 111);
+    
+}
+
+.stickynote textarea {
+    
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+    
+    background-color: transparent;
+    
+    min-height: 100px;
+    min-width: 150px;
+    
+    max-height: 500px;
+    max-width: 600px;
+    
+    padding: 25px 10px 5px 10px;
+    
+    box-sizing: border-box;
+    
+    border: none;
+    
+}
+
+.stickynote .bar {
+    
+    background-color: #e2d883;
+    
+    width: 100%;
+    height: 20px;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+}
+
+
