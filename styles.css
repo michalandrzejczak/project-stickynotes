@@ -48,8 +48,8 @@ body {
     min-height: 100px;
     min-width: 150px;
     
-    max-height: 500px;
-    max-width: 600px;
+    max-height: 300px;
+    max-width: 400px;
     
     position: absolute;
     top: 0;
@@ -62,17 +62,17 @@ body {
 .stickynote textarea {
     
     font-family: 'Caveat', cursive;
-    font-size: 20px;
+    font-size: 24px;
     
     background-color: transparent;
     
     min-height: 100px;
     min-width: 150px;
     
-    max-height: 500px;
-    max-width: 600px;
+    max-height: 300px;
+    max-width: 400px;
     
-    padding: 25px 10px 0px 10px;
+    padding: 25px 10px 5px 10px;
     
     box-sizing: border-box;
     
@@ -80,9 +80,9 @@ body {
     
 }
 
-.stickynote textarea:active {
+.stickynote textarea:focus {
     
-    border: none;
+    outline: none;
     
 }
 
@@ -98,6 +98,15 @@ body {
     top: 0;
     left: 0;
     
+    text-align: right;
+}
+
+.stickynote .bar .close {
+    
+    margin: auto 5px;
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.15);
+    
 }
 
 .stickynote:hover {
@@ -111,6 +120,13 @@ body {
     background-color: #bcb364;
     
     cursor: move;
+    
+}
+.stickynote .bar .close:hover {
+
+    color: rgba(0, 0, 0, 0.3);
+    
+    cursor: pointer;
     
 }
 

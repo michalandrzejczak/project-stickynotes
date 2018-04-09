@@ -8,7 +8,10 @@
         
         var stickynoteElement = document.createElement('div'),
             barElement = document.createElement('div'),
+            closeBtn = document.createElement('span'),
             textareaElement = document.createElement('textarea');
+        
+        closeBtn.innerHTML = '<i class="fas fa-times"></i>';
     
         var transformCSSValue = "translateX(" + Math.random() * (window.innerWidth - 200) + "px) translateY(" + Math.random() * (window.innerHeight - 100) + "px)";
     
@@ -16,9 +19,11 @@
     
         stickynoteElement.classList.add('stickynote');
         barElement.classList.add('bar');
+        closeBtn.classList.add('close');
     
         stickynoteElement.appendChild(barElement);
         stickynoteElement.appendChild(textareaElement); 
+        barElement.appendChild(closeBtn);
     
         document.body.appendChild(stickynoteElement);
         
@@ -26,11 +31,14 @@
         
         stickynoteElement.addEventListener('dragstart', drag_start, false); 
         
+        closeBtn.addEventListener('click', deleteStickynote);
+        
     }
     
     createStickynote();
     
     document.body.addEventListener('dragover', drag_over, false); 
+    
     document.body.addEventListener('drop', drop, false); 
     
     function drag_start(event) {
@@ -45,6 +53,7 @@
     function drag_over(event) { 
         
         event.preventDefault(); 
+        
         return false; 
         
     } 
@@ -52,13 +61,24 @@
     function drop(event) { 
         
         var offset = event.dataTransfer.getData("text/plain").split(',');
+        
         var draggableElement = document.querySelector('.stickynote:active');
+        
         draggableElement.style.left = (event.clientX + parseInt(offset[0],10)) + 'px';
+        
         draggableElement.style.top = (event.clientY + parseInt(offset[1],10)) + 'px';
+        
         event.preventDefault();
+        
         return false;
         
         } 
+    
+    function deleteStickynote() {
+        
+        this.parentNode.parentNode.remove();
+        
+    }
 
     
 })();
